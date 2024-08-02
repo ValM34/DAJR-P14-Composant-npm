@@ -1,6 +1,6 @@
 {
   "name": "dajr-valentin-p14-new",
-  "private": true,
+  "private": false,
   "version": "1.0.1",
   "type": "module",
   "files": ["dist"],
