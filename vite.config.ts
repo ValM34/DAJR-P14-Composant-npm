@@ -13,8 +13,8 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: "dajr-valentin-p14-new",
-      formats: ['es', 'umd'],
-      fileName: (format) => `dajr-valentin-p14-new.${format}.js`
+      formats: ['es'],
+      fileName: `index`
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
