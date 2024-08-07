@@ -1,5 +1,5 @@
 import ke, { useState as K } from "react";
-var ae = { exports: {} }, V = {};
+import './index.css';var ae = { exports: {} }, V = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js

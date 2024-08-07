@@ -1,9 +1,11 @@
 {
   "name": "dajr-valentin-p14-new",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "module": "./dist/index.js",
@@ -17,7 +19,9 @@
   },
   "typesVersions": {
     "*": {
-      "*": ["./dist/*"]
+      "*": [
+        "./dist/*"
+      ]
     }
   },
   "scripts": {
@@ -28,7 +32,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vite-plugin-lib-inject-css": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.12",
