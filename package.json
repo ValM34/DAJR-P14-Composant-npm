@@ -1,10 +1,10 @@
 {
   "name": "dajr-valentin-p14-new",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "files": ["dist"],
-  "main": "./dist/dajr-valentin-p14-new.es.js",
+  "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "module": "./dist/index.js",
   "exports": {
