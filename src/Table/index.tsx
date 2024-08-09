@@ -4,29 +4,22 @@ import '../style.css';
 interface TableProps {
   rowsData: {
     [index: string]: string,
-  }[]
+  }[],
+  categories: string[],
 }
 
 function Table(props: TableProps) {
-  const { rowsData } = props;
+  const { rowsData, categories } = props;
   const [rows, setRows] = useState(rowsData);
 
   // Handle search
   const [rowsToSearch, setRowsToSearch] = useState(rowsData);
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const filteredRows = rowsToSearch.filter((row) => {
-      if(
-        row.firstName.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.lastName.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.startDate.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.department.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.dateOfBirth.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.street.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.city.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.state.toLowerCase().includes((e.target.value).toLowerCase())
-        || row.zipCode.toString().includes((e.target.value).toLowerCase())
-      ) {
-        return true;
+      for(let i = 0; i < props.categories.length; i++) {
+        if(row[categories[i]].toLowerCase().includes((e.target.value).toLowerCase())) {
+          return true;
+        }
       }
     })
     console.log(filteredRows)
@@ -83,6 +76,18 @@ function Table(props: TableProps) {
     }
   }
 
+  // Filter columns elements
+  const filterColumns = categories.map((category) => {
+    return (
+      <th
+        key={category}
+        onClick={() => filterBy(category)}
+      >
+        {category}
+      </th>
+    )
+  })
+
   // Handle pagination
   const defaultPaginationValue = 10;
   const [pagination, setPagination] = useState({
@@ -136,18 +141,20 @@ function Table(props: TableProps) {
     pagination.end = rows.length
   }
   for(let i = pagination.start; i < pagination.end; i++) {
+    const element = [];
+    for(let j = 0; j < categories.length; j++) {
+      if(j === 0) {
+        element.push(
+          <th scope="row">{rows[i][categories[j]]}</th>
+        )
+      } else {
+        element.push(
+          <td>{rows[i][categories[j]]}</td>
+        )
+      }
+    }
     elements.push(
-      <tr key={i}>
-      <th scope="row">{rows[i].firstName}</th>
-      <td>{rows[i].lastName}</td>
-      <td>{rows[i].startDate}</td>
-      <td>{rows[i].department}</td>
-      <td>{rows[i].dateOfBirth}</td>
-      <td>{rows[i].street}</td>
-      <td>{rows[i].city}</td>
-      <td>{rows[i].state}</td>
-      <td>{rows[i].zipCode}</td>
-      </tr>
+      <tr key={i}>{element}</tr>
     )
   }
 
@@ -172,15 +179,7 @@ function Table(props: TableProps) {
         <table>
         <thead className="VC-table-thead">
           <tr>
-            <th onClick={() => filterBy('firstName')} scope="col">First Name</th>
-            <th onClick={() => filterBy('lastName')} scope="col">Last Name</th>
-            <th onClick={() => filterBy('startDate')} scope="col">Start Date</th>
-            <th onClick={() => filterBy('department')} scope="col">Department</th>
-            <th onClick={() => filterBy('dateOfBirth')} scope="col">Date of Birth</th>
-            <th onClick={() => filterBy('street')} scope="col">Street</th>
-            <th onClick={() => filterBy('city')} scope="col">City</th>
-            <th onClick={() => filterBy('state')} scope="col">State</th>
-            <th onClick={() => filterBy('zipCode')} scope="col">Zip Code</th>
+            {filterColumns}
           </tr>
         </thead>
         <tbody>
