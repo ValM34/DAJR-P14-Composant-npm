@@ -20,12 +20,12 @@ import { Table } from 'dajr-valentin-p14-new';
 ```
 Inject your data in props
 ```html
-<Table data={data} />
+<Table data={data} categories={categories} />
 ```
 
 ## Format for your data
 ```js
-[
+data = [
   {
     firstName: "string",
     lastName: "string",
@@ -40,4 +40,8 @@ Inject your data in props
     ...
   }
 ]
+
+...
+
+categories = ["firstName", "lastName", ...]
 ```

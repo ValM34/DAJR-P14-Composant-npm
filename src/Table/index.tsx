@@ -80,10 +80,10 @@ function Table(props: TableProps) {
   function camelCaseToNormal(str: string) {
     return str.replace(/([A-Z])/g, ' $1').trim().toLowerCase().replace(/^./, match => match.toUpperCase());
   }
-  const filterColumns = categories.map((category) => {
+  const filterColumns = categories.map((category, index) => {
     return (
       <th
-        key={category}
+        key={index}
         onClick={() => filterBy(category)}
       >
         {camelCaseToNormal(category)}
