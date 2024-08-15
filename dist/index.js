@@ -13,12 +13,12 @@ var De;
 function dr() {
   if (De) return B;
   De = 1;
-  var W = Ae, k = Symbol.for("react.element"), j = Symbol.for("react.fragment"), f = Object.prototype.hasOwnProperty, x = W.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, V = { key: !0, ref: !0, __self: !0, __source: !0 };
-  function A(T, d, w) {
-    var b, _ = {}, O = null, S = null;
-    w !== void 0 && (O = "" + w), d.key !== void 0 && (O = "" + d.key), d.ref !== void 0 && (S = d.ref);
-    for (b in d) f.call(d, b) && !V.hasOwnProperty(b) && (_[b] = d[b]);
-    if (T && T.defaultProps) for (b in d = T.defaultProps, d) _[b] === void 0 && (_[b] = d[b]);
+  var W = Ae, k = Symbol.for("react.element"), j = Symbol.for("react.fragment"), d = Object.prototype.hasOwnProperty, x = W.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, V = { key: !0, ref: !0, __self: !0, __source: !0 };
+  function A(T, f, w) {
+    var m, _ = {}, O = null, S = null;
+    w !== void 0 && (O = "" + w), f.key !== void 0 && (O = "" + f.key), f.ref !== void 0 && (S = f.ref);
+    for (m in f) d.call(f, m) && !V.hasOwnProperty(m) && (_[m] = f[m]);
+    if (T && T.defaultProps) for (m in f = T.defaultProps, f) _[m] === void 0 && (_[m] = f[m]);
     return { $$typeof: k, type: T, key: O, ref: S, props: _, _owner: x.current };
   }
   return B.Fragment = j, B.jsx = A, B.jsxs = A, B;
@@ -36,7 +36,7 @@ var J = {};
 var Fe;
 function vr() {
   return Fe || (Fe = 1, process.env.NODE_ENV !== "production" && function() {
-    var W = Ae, k = Symbol.for("react.element"), j = Symbol.for("react.portal"), f = Symbol.for("react.fragment"), x = Symbol.for("react.strict_mode"), V = Symbol.for("react.profiler"), A = Symbol.for("react.provider"), T = Symbol.for("react.context"), d = Symbol.for("react.forward_ref"), w = Symbol.for("react.suspense"), b = Symbol.for("react.suspense_list"), _ = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), S = Symbol.for("react.offscreen"), a = Symbol.iterator, D = "@@iterator";
+    var W = Ae, k = Symbol.for("react.element"), j = Symbol.for("react.portal"), d = Symbol.for("react.fragment"), x = Symbol.for("react.strict_mode"), V = Symbol.for("react.profiler"), A = Symbol.for("react.provider"), T = Symbol.for("react.context"), f = Symbol.for("react.forward_ref"), w = Symbol.for("react.suspense"), m = Symbol.for("react.suspense_list"), _ = Symbol.for("react.memo"), O = Symbol.for("react.lazy"), S = Symbol.for("react.offscreen"), a = Symbol.iterator, D = "@@iterator";
     function H(e) {
       if (e === null || typeof e != "object")
         return null;
@@ -61,10 +61,10 @@ function vr() {
         l.unshift("Warning: " + r), Function.prototype.apply.call(console[e], console, l);
       }
     }
-    var g = !1, m = !1, P = !1, Ie = !1, $e = !1, ue;
+    var g = !1, b = !1, P = !1, Ie = !1, $e = !1, ue;
     ue = Symbol.for("react.module.reference");
     function We(e) {
-      return !!(typeof e == "string" || typeof e == "function" || e === f || e === V || $e || e === x || e === w || e === b || Ie || e === S || g || m || P || typeof e == "object" && e !== null && (e.$$typeof === O || e.$$typeof === _ || e.$$typeof === A || e.$$typeof === T || e.$$typeof === d || // This needs to include all possible module reference object
+      return !!(typeof e == "string" || typeof e == "function" || e === d || e === V || $e || e === x || e === w || e === m || Ie || e === S || g || b || P || typeof e == "object" && e !== null && (e.$$typeof === O || e.$$typeof === _ || e.$$typeof === A || e.$$typeof === T || e.$$typeof === f || // This needs to include all possible module reference object
       // types supported by any Flight configuration anywhere since
       // we don't know which Flight build this will end up being used
       // with.
@@ -88,7 +88,7 @@ function vr() {
       if (typeof e == "string")
         return e;
       switch (e) {
-        case f:
+        case d:
           return "Fragment";
         case j:
           return "Portal";
@@ -98,7 +98,7 @@ function vr() {
           return "StrictMode";
         case w:
           return "Suspense";
-        case b:
+        case m:
           return "SuspenseList";
       }
       if (typeof e == "object")
@@ -109,7 +109,7 @@ function vr() {
           case A:
             var t = e;
             return le(t._context) + ".Provider";
-          case d:
+          case f:
             return Ve(e, e.render, "ForwardRef");
           case _:
             var n = e.displayName || null;
@@ -294,12 +294,12 @@ function vr() {
       switch (e) {
         case w:
           return q("Suspense");
-        case b:
+        case m:
           return q("SuspenseList");
       }
       if (typeof e == "object")
         switch (e.$$typeof) {
-          case d:
+          case f:
             return Ue(e.render);
           case _:
             return G(e.type, r, t);
@@ -543,7 +543,7 @@ Check the top-level render call using <` + t + ">.");
         var t;
         if (typeof r == "function")
           t = r.propTypes;
-        else if (typeof r == "object" && (r.$$typeof === d || // Note: Memo only checks outer props here.
+        else if (typeof r == "object" && (r.$$typeof === f || // Note: Memo only checks outer props here.
         // Inner props are checked in the reconciler.
         r.$$typeof === _))
           t = r.propTypes;
@@ -614,7 +614,7 @@ React keys must be passed directly to JSX without using spread:
   <%s key={someKey} {...props} />`, ie, $, cr, $), Se[$ + ie] = !0;
           }
         }
-        return e === f ? or(p) : ar(p), p;
+        return e === d ? or(p) : ar(p), p;
       }
     }
     function ir(e, r, t) {
@@ -624,68 +624,68 @@ React keys must be passed directly to JSX without using spread:
       return ke(e, r, t, !1);
     }
     var ur = sr, lr = ir;
-    J.Fragment = f, J.jsx = ur, J.jsxs = lr;
+    J.Fragment = d, J.jsx = ur, J.jsxs = lr;
   }()), J;
 }
 process.env.NODE_ENV === "production" ? se.exports = dr() : se.exports = vr();
 var c = se.exports;
 function hr(W) {
-  const { rowsData: k, categories: j } = W, [f, x] = X(k), [V, A] = X(k), T = (s) => {
-    const g = V.filter((m) => {
+  const { rowsData: k, categories: j } = W, [d, x] = X(k), [V, A] = X(k), T = (s) => {
+    const g = V.filter((b) => {
       for (let P = 0; P < W.categories.length; P++)
-        if (m[j[P]].toLowerCase().includes(s.target.value.toLowerCase()))
+        if (b[j[P]].toLowerCase().includes(s.target.value.toLowerCase()))
           return !0;
     });
-    console.log(g), x(g), D({
+    x(g), D({
       ...a,
       start: 0,
       end: a.rowsPerPage
     });
-  }, [d, w] = X({
+  }, [f, w] = X({
     order: "",
     numberOfClicks: 0
-  }), b = (s) => {
-    if (d.order !== s) {
-      const g = [...f].sort((m, P) => m[s].localeCompare(P[s]));
+  }), m = (s) => {
+    if (f.order !== s) {
+      const g = [...d].sort((b, P) => b[s].localeCompare(P[s]));
       w({
         order: s,
         numberOfClicks: 1
       }), x(g);
-    } else if (d.order === s && d.numberOfClicks % 2 !== 0) {
-      const g = [...f].sort((m, P) => P[s].localeCompare(m[s]));
+    } else if (f.order === s && f.numberOfClicks % 2 !== 0) {
+      const g = [...d].sort((b, P) => P[s].localeCompare(b[s]));
       w({
         order: s,
-        numberOfClicks: d.numberOfClicks + 1
+        numberOfClicks: f.numberOfClicks + 1
       }), x(g);
-    } else if (d.order === s && d.numberOfClicks % 2 === 0) {
-      const g = [...f].sort((m, P) => m[s].localeCompare(P[s]));
+    } else if (f.order === s && f.numberOfClicks % 2 === 0) {
+      const g = [...d].sort((b, P) => b[s].localeCompare(P[s]));
       w({
         order: s,
-        numberOfClicks: d.numberOfClicks + 1
+        numberOfClicks: f.numberOfClicks + 1
       }), x(g);
     }
   };
   function _(s) {
     return s.replace(/([A-Z])/g, " $1").trim().toLowerCase().replace(/^./, (g) => g.toUpperCase());
   }
-  const O = j.map((s) => /* @__PURE__ */ c.jsx(
+  const O = j.map((s, g) => /* @__PURE__ */ c.jsx(
     "th",
     {
-      onClick: () => b(s),
+      onClick: () => m(s),
       children: _(s)
     },
-    s
+    g
   )), S = 10, [a, D] = X({
     rowsPerPage: S,
     start: 0,
     end: S
   }), H = () => {
-    if (console.log(a.start), console.log(a.end), a.end !== f.length) {
-      if (f.length - a.end < a.rowsPerPage)
+    if (a.end !== d.length) {
+      if (d.length - a.end < a.rowsPerPage)
         return D({
           ...a,
           start: a.start + a.rowsPerPage,
-          end: f.length
+          end: d.length
         });
       D({
         ...a,
@@ -694,12 +694,12 @@ function hr(W) {
       });
     }
   }, F = () => {
-    if (console.log(a.start), console.log(a.end), console.log(f.length), a.start !== 0) {
+    if (a.start !== 0) {
       if (a.end - a.start < a.rowsPerPage)
         return D({
           ...a,
           start: a.start - a.rowsPerPage,
-          end: f.length - (a.end - a.start)
+          end: d.length - (a.end - a.start)
         });
       D({
         ...a,
@@ -708,14 +708,14 @@ function hr(W) {
       });
     }
   }, h = [];
-  a.end > f.length && (a.end = f.length);
+  a.end > d.length && (a.end = d.length);
   for (let s = a.start; s < a.end; s++) {
     const g = [];
-    for (let m = 0; m < j.length; m++)
-      m === 0 ? g.push(
-        /* @__PURE__ */ c.jsx("th", { scope: "row", children: f[s][j[m]] })
+    for (let b = 0; b < j.length; b++)
+      b === 0 ? g.push(
+        /* @__PURE__ */ c.jsx("th", { scope: "row", children: d[s][j[b]] }, b)
       ) : g.push(
-        /* @__PURE__ */ c.jsx("td", { children: f[s][j[m]] })
+        /* @__PURE__ */ c.jsx("td", { children: d[s][j[b]] }, b)
       );
     h.push(
       /* @__PURE__ */ c.jsx("tr", { children: g }, s)
@@ -733,20 +733,20 @@ function hr(W) {
         ] }),
         /* @__PURE__ */ c.jsx("span", { children: " entries" })
       ] }),
-      /* @__PURE__ */ c.jsx("input", { onFocus: () => A(f), onChange: T, type: "text", placeholder: "Search" })
+      /* @__PURE__ */ c.jsx("input", { onFocus: () => A(d), onChange: T, type: "text", placeholder: "Search" })
     ] }),
-    f.length === 0 ? /* @__PURE__ */ c.jsx("div", { className: "VC-table-empty", children: "This table is empty" }) : /* @__PURE__ */ c.jsxs("table", { children: [
+    d.length === 0 ? /* @__PURE__ */ c.jsx("div", { className: "VC-table-empty", children: "This table is empty" }) : /* @__PURE__ */ c.jsxs("table", { children: [
       /* @__PURE__ */ c.jsx("thead", { className: "VC-table-thead", children: /* @__PURE__ */ c.jsx("tr", { children: O }) }),
       /* @__PURE__ */ c.jsx("tbody", { children: h })
     ] }),
     /* @__PURE__ */ c.jsxs("div", { className: "VC-pagination", children: [
-      f.length === 0 ? /* @__PURE__ */ c.jsx("span", { children: "Showing 0 to 0 of 0 entries" }) : /* @__PURE__ */ c.jsxs("span", { children: [
+      d.length === 0 ? /* @__PURE__ */ c.jsx("span", { children: "Showing 0 to 0 of 0 entries" }) : /* @__PURE__ */ c.jsxs("span", { children: [
         "Showing ",
         a.start + 1,
         " to ",
         a.end,
         " of ",
-        f.length,
+        d.length,
         " entries"
       ] }),
       /* @__PURE__ */ c.jsxs("span", { className: "VC-pagination-buttons-container", children: [

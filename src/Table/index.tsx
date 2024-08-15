@@ -151,7 +151,6 @@ function Table(props: TableProps) {
         )
       }
     }
-    console.log(element)
     elements.push(
       <tr key={i}>{element}</tr>
     )
