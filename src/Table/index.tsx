@@ -143,11 +143,11 @@ function Table(props: TableProps) {
     for(let j = 0; j < categories.length; j++) {
       if(j === 0) {
         element.push(
-          <th scope="row">{rows[i][categories[j]]}</th>
+          <th key={j} scope="row">{rows[i][categories[j]]}</th>
         )
       } else {
         element.push(
-          <td>{rows[i][categories[j]]}</td>
+          <td key={j}>{rows[i][categories[j]]}</td>
         )
       }
     }
