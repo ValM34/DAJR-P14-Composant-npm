@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../style.css';
+import * as React from 'react';
 
 interface TableProps {
   rowsData: {
@@ -22,7 +23,6 @@ function Table(props: TableProps) {
         }
       }
     })
-    console.log(filteredRows)
     setRows(filteredRows);
     setPagination({
       ...pagination,
@@ -99,8 +99,6 @@ function Table(props: TableProps) {
     end: defaultPaginationValue,
   });
   const handleNextPage = () => {
-    console.log(pagination.start)
-    console.log(pagination.end)
     if(pagination.end === rows.length) {
       return;
     }
@@ -118,9 +116,6 @@ function Table(props: TableProps) {
     })
   }
   const handlePrevPage = () => {
-    console.log(pagination.start)
-    console.log(pagination.end)
-    console.log(rows.length)
     if(pagination.start === 0) {
       return;
     }
@@ -156,6 +151,7 @@ function Table(props: TableProps) {
         )
       }
     }
+    console.log(element)
     elements.push(
       <tr key={i}>{element}</tr>
     )
