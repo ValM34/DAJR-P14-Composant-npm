@@ -139,7 +139,7 @@ function Table(props: TableProps) {
     pagination.end = rows.length
   }
   for(let i = pagination.start; i < pagination.end; i++) {
-    const element = [];
+    const element: JSX.Element[] = [];
     for(let j = 0; j < categories.length; j++) {
       if(j === 0) {
         element.push(
